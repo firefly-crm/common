@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package telegram;
+
+import "validate/validate.proto";
+
+option go_package = "github.com/firefly-crm/common/messages/telegram";
+
+message PromptEvent {
+    uint64 user_id = 1 [(validate.rules).uint64.gt = 0];
+    string message = 2 [(validate.rules).string.min_len = 1];
+}
+
+message CallbackEvent {
+    uint64 user_id = 1 [(validate.rules).uint64.gt = 0];
+    uint64 message_id = 2 [(validate.rules).uint64.gt = 0];
+    uint64 entity_id = 3;
+    CallbackType event = 100 [(validate.rules).enum = { defined_only: true, not_in: 0, }];
+}
+
+message CommandEvent {
+    uint64 user_id = 1 [(validate.rules).uint64.gt = 0];
+    uint64 message_id = 2 [(validate.rules).uint64.gt = 0];
+    CommandType command = 100 [(validate.rules).enum = { defined_only: true, not_in: 0, }];
+}
+
+enum CommandType {
+    CMD_UNKNOWN = 0;
+    START = 1;
+    CREATE_ORDER = 2;
+}
+
+enum CallbackType {
+    CB_UNKNOWN = 0;
+
+    ITEMS = 1;
+    CUSTOMER = 2;
+    PAYMENTS = 3;
+
+    ADD_RECEIPT_ITEM = 4;
+    REMOVE_RECEIPT_ITEM = 5;
+    EDIT_RECEIPT_ITEM = 6;
+
+    BACK = 7;
+    CANCEL = 8;
+
+    ADD_PAYMENT_LINK = 9;
+    ADD_PAYMENT_TRANSFER = 10;
+    ADD_PAYMENT_CASH = 11;
+    PAYMENT_AMOUNT_FULL = 12;
+    PAYMENT_AMOUNT_PARTIAL = 13;
+
+    PAYMENT_REFUND_FULL = 14;
+    PAYMENT_REFUND_PARTIAL = 15;
+
+    REFUND_PAYMENT = 16;
+    REMOVE_PAYMENT = 17;
+
+    ORDER_ACTIONS = 18;
+    ORDER_STATE_DONE = 19;
+    ORDER_DELETE = 20;
+    ORDER_RESTART = 21;
+    ORDER_RESTORE = 22;
+    ORDER_COLLAPSE = 23;
+    ORDER_EXPAND = 24;
+    ORDER_STATE_IN_PROGRESS = 25;
+
+    NOTIFY_READ = 26;
+
+    CUSTOM_ITEM_DELIVERY = 500;
+    CUSTOM_ITEM_LINGERIE_SET = 501;
+
+
+
+//    kbDataInstagram       = "instagram"
+//    kbDataNotifyRead      = "notify_readed"
+}
