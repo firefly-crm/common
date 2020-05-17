@@ -6,8 +6,6 @@ import (
 
 	"github.com/firefly-crm/common/logger"
 	"github.com/golang/protobuf/proto"
-	"github.com/opentracing-contrib/go-amqp/amqptracer"
-	"github.com/opentracing/opentracing-go"
 	"github.com/pkg/errors"
 	"github.com/streadway/amqp"
 )
@@ -156,12 +154,12 @@ func (e *Exchange) Publish(ctx context.Context, routingKey string, m proto.Messa
 		Headers:     make(amqp.Table),
 	}
 
-	sp := opentracing.SpanFromContext(ctx)
-	defer sp.Finish()
+	//sp := opentracing.SpanFromContext(ctx)
+	//defer sp.Finish()
 
-	if err := amqptracer.Inject(sp, msg.Headers); err != nil {
-		return errors.WithMessage(err, "failed to inject span information to headers")
-	}
+	//if err := amqptracer.Inject(sp, msg.Headers); err != nil {
+	//	return errors.WithMessage(err, "failed to inject span information to headers")
+	//}
 
 	if e.options.Durable {
 		msg.DeliveryMode = 2 //Persistent
