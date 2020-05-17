@@ -46,7 +46,9 @@ func (m *PromptEvent) Validate() error {
 
 	// no validation rules for UserId
 
-	// no validation rules for Message
+	// no validation rules for MessageId
+
+	// no validation rules for UserMessage
 
 	return nil
 }

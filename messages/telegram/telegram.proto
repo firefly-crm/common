@@ -8,7 +8,8 @@ option go_package = "github.com/firefly-crm/common/messages/telegram";
 
 message PromptEvent {
     uint64 user_id = 1 [(validate.rules).uint64.gt = 0];
-    string message = 2 [(validate.rules).string.min_len = 1];
+    uint64 message_id = 2 [(validate.rules).uint64.gt = 0];
+    string user_message = 3 [(validate.rules).string.min_len = 1];
 }
 
 message CallbackEvent {
@@ -21,6 +22,7 @@ message CallbackEvent {
 message CommandEvent {
     uint64 user_id = 1 [(validate.rules).uint64.gt = 0];
     uint64 message_id = 2 [(validate.rules).uint64.gt = 0];
+    repeated string arguments = 3;
     CommandType command = 100 [(validate.rules).enum = { defined_only: true, not_in: 0, }];
 }
 
@@ -28,6 +30,7 @@ enum CommandType {
     CMD_UNKNOWN = 0;
     START = 1;
     CREATE_ORDER = 2;
+    REGISTER_AS_MERCHANT = 3;
 }
 
 enum CallbackType {
@@ -37,9 +40,9 @@ enum CallbackType {
     CUSTOMER = 2;
     PAYMENTS = 3;
 
-    ADD_RECEIPT_ITEM = 4;
-    REMOVE_RECEIPT_ITEM = 5;
-    EDIT_RECEIPT_ITEM = 6;
+    RECEIPT_ITEMS_ADD = 4;
+    RECEIPT_ITEMS_REMOVE = 5;
+    RECEIPT_ITEMS_EDIT = 6;
 
     BACK = 7;
     CANCEL = 8;
@@ -53,8 +56,8 @@ enum CallbackType {
     PAYMENT_REFUND_FULL = 14;
     PAYMENT_REFUND_PARTIAL = 15;
 
-    REFUND_PAYMENT = 16;
-    REMOVE_PAYMENT = 17;
+    PAYMENTS_REFUND = 16;
+    PAYMENTS_REMOVE = 17;
 
     ORDER_ACTIONS = 18;
     ORDER_STATE_DONE = 19;
@@ -67,11 +70,23 @@ enum CallbackType {
 
     NOTIFY_READ = 26;
 
+    CUSTOMER_EDIT_EMAIL = 27;
+    CUSTOMER_EDIT_PHONE = 28;
+    CUSTOMER_EDIT_INSTAGRAM = 29;
+
+    RECEIPT_ITEM_EDIT = 30;
+    RECEIPT_ITEM_EDIT_QTY = 31;
+    RECEIPT_ITEM_EDIT_PRICE = 32;
+    RECEIPT_ITEM_EDIT_NAME = 33;
+    RECEIPT_ITEM_REMOVE = 34;
+
+
+    PAYMENT_REFUND = 35;
+    PAYMENT_REMOVE = 36;
+
     CUSTOM_ITEM_DELIVERY = 500;
     CUSTOM_ITEM_LINGERIE_SET = 501;
 
-
-
-//    kbDataInstagram       = "instagram"
-//    kbDataNotifyRead      = "notify_readed"
+    //    kbDataInstagram       = "instagram"
+    //    kbDataNotifyRead      = "notify_readed"
 }
