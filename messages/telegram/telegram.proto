@@ -74,6 +74,7 @@ enum CallbackType {
     CUSTOMER_EDIT_PHONE = 28;
     CUSTOMER_EDIT_INSTAGRAM = 29;
 
+
     RECEIPT_ITEM_EDIT = 30;
     RECEIPT_ITEM_EDIT_QTY = 31;
     RECEIPT_ITEM_EDIT_PRICE = 32;
@@ -87,8 +88,12 @@ enum CallbackType {
     ORDER_EDIT_DUE_DATE = 38;
     ORDER_EDIT_DESCRIPTION = 39;
 
+    CUSTOMER_EDIT_DESCRIPTION = 40;
+
     CUSTOM_ITEM_DELIVERY = 500;
     CUSTOM_ITEM_LINGERIE_SET = 501;
+
+
 
     //    kbDataInstagram       = "instagram"
     //    kbDataNotifyRead      = "notify_readed"

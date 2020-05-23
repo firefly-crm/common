@@ -81,48 +81,49 @@ func (CommandType) EnumDescriptor() ([]byte, []int) {
 type CallbackType int32
 
 const (
-	CallbackType_CB_UNKNOWN               CallbackType = 0
-	CallbackType_ITEMS                    CallbackType = 1
-	CallbackType_CUSTOMER                 CallbackType = 2
-	CallbackType_PAYMENTS                 CallbackType = 3
-	CallbackType_RECEIPT_ITEMS_ADD        CallbackType = 4
-	CallbackType_RECEIPT_ITEMS_REMOVE     CallbackType = 5
-	CallbackType_RECEIPT_ITEMS_EDIT       CallbackType = 6
-	CallbackType_BACK                     CallbackType = 7
-	CallbackType_CANCEL                   CallbackType = 8
-	CallbackType_ADD_PAYMENT_LINK         CallbackType = 9
-	CallbackType_ADD_PAYMENT_TRANSFER     CallbackType = 10
-	CallbackType_ADD_PAYMENT_CASH         CallbackType = 11
-	CallbackType_PAYMENT_AMOUNT_FULL      CallbackType = 12
-	CallbackType_PAYMENT_AMOUNT_PARTIAL   CallbackType = 13
-	CallbackType_PAYMENT_REFUND_FULL      CallbackType = 14
-	CallbackType_PAYMENT_REFUND_PARTIAL   CallbackType = 15
-	CallbackType_PAYMENTS_REFUND          CallbackType = 16
-	CallbackType_PAYMENTS_REMOVE          CallbackType = 17
-	CallbackType_ORDER_ACTIONS            CallbackType = 18
-	CallbackType_ORDER_STATE_DONE         CallbackType = 19
-	CallbackType_ORDER_DELETE             CallbackType = 20
-	CallbackType_ORDER_RESTART            CallbackType = 21
-	CallbackType_ORDER_RESTORE            CallbackType = 22
-	CallbackType_ORDER_COLLAPSE           CallbackType = 23
-	CallbackType_ORDER_EXPAND             CallbackType = 24
-	CallbackType_ORDER_STATE_IN_PROGRESS  CallbackType = 25
-	CallbackType_NOTIFY_READ              CallbackType = 26
-	CallbackType_CUSTOMER_EDIT_EMAIL      CallbackType = 27
-	CallbackType_CUSTOMER_EDIT_PHONE      CallbackType = 28
-	CallbackType_CUSTOMER_EDIT_INSTAGRAM  CallbackType = 29
-	CallbackType_RECEIPT_ITEM_EDIT        CallbackType = 30
-	CallbackType_RECEIPT_ITEM_EDIT_QTY    CallbackType = 31
-	CallbackType_RECEIPT_ITEM_EDIT_PRICE  CallbackType = 32
-	CallbackType_RECEIPT_ITEM_EDIT_NAME   CallbackType = 33
-	CallbackType_RECEIPT_ITEM_REMOVE      CallbackType = 34
-	CallbackType_PAYMENT_REFUND           CallbackType = 35
-	CallbackType_PAYMENT_REMOVE           CallbackType = 36
-	CallbackType_ORDER_EDIT               CallbackType = 37
-	CallbackType_ORDER_EDIT_DUE_DATE      CallbackType = 38
-	CallbackType_ORDER_EDIT_DESCRIPTION   CallbackType = 39
-	CallbackType_CUSTOM_ITEM_DELIVERY     CallbackType = 500
-	CallbackType_CUSTOM_ITEM_LINGERIE_SET CallbackType = 501
+	CallbackType_CB_UNKNOWN                CallbackType = 0
+	CallbackType_ITEMS                     CallbackType = 1
+	CallbackType_CUSTOMER                  CallbackType = 2
+	CallbackType_PAYMENTS                  CallbackType = 3
+	CallbackType_RECEIPT_ITEMS_ADD         CallbackType = 4
+	CallbackType_RECEIPT_ITEMS_REMOVE      CallbackType = 5
+	CallbackType_RECEIPT_ITEMS_EDIT        CallbackType = 6
+	CallbackType_BACK                      CallbackType = 7
+	CallbackType_CANCEL                    CallbackType = 8
+	CallbackType_ADD_PAYMENT_LINK          CallbackType = 9
+	CallbackType_ADD_PAYMENT_TRANSFER      CallbackType = 10
+	CallbackType_ADD_PAYMENT_CASH          CallbackType = 11
+	CallbackType_PAYMENT_AMOUNT_FULL       CallbackType = 12
+	CallbackType_PAYMENT_AMOUNT_PARTIAL    CallbackType = 13
+	CallbackType_PAYMENT_REFUND_FULL       CallbackType = 14
+	CallbackType_PAYMENT_REFUND_PARTIAL    CallbackType = 15
+	CallbackType_PAYMENTS_REFUND           CallbackType = 16
+	CallbackType_PAYMENTS_REMOVE           CallbackType = 17
+	CallbackType_ORDER_ACTIONS             CallbackType = 18
+	CallbackType_ORDER_STATE_DONE          CallbackType = 19
+	CallbackType_ORDER_DELETE              CallbackType = 20
+	CallbackType_ORDER_RESTART             CallbackType = 21
+	CallbackType_ORDER_RESTORE             CallbackType = 22
+	CallbackType_ORDER_COLLAPSE            CallbackType = 23
+	CallbackType_ORDER_EXPAND              CallbackType = 24
+	CallbackType_ORDER_STATE_IN_PROGRESS   CallbackType = 25
+	CallbackType_NOTIFY_READ               CallbackType = 26
+	CallbackType_CUSTOMER_EDIT_EMAIL       CallbackType = 27
+	CallbackType_CUSTOMER_EDIT_PHONE       CallbackType = 28
+	CallbackType_CUSTOMER_EDIT_INSTAGRAM   CallbackType = 29
+	CallbackType_RECEIPT_ITEM_EDIT         CallbackType = 30
+	CallbackType_RECEIPT_ITEM_EDIT_QTY     CallbackType = 31
+	CallbackType_RECEIPT_ITEM_EDIT_PRICE   CallbackType = 32
+	CallbackType_RECEIPT_ITEM_EDIT_NAME    CallbackType = 33
+	CallbackType_RECEIPT_ITEM_REMOVE       CallbackType = 34
+	CallbackType_PAYMENT_REFUND            CallbackType = 35
+	CallbackType_PAYMENT_REMOVE            CallbackType = 36
+	CallbackType_ORDER_EDIT                CallbackType = 37
+	CallbackType_ORDER_EDIT_DUE_DATE       CallbackType = 38
+	CallbackType_ORDER_EDIT_DESCRIPTION    CallbackType = 39
+	CallbackType_CUSTOMER_EDIT_DESCRIPTION CallbackType = 40
+	CallbackType_CUSTOM_ITEM_DELIVERY      CallbackType = 500
+	CallbackType_CUSTOM_ITEM_LINGERIE_SET  CallbackType = 501
 )
 
 // Enum value maps for CallbackType.
@@ -168,52 +169,54 @@ var (
 		37:  "ORDER_EDIT",
 		38:  "ORDER_EDIT_DUE_DATE",
 		39:  "ORDER_EDIT_DESCRIPTION",
+		40:  "CUSTOMER_EDIT_DESCRIPTION",
 		500: "CUSTOM_ITEM_DELIVERY",
 		501: "CUSTOM_ITEM_LINGERIE_SET",
 	}
 	CallbackType_value = map[string]int32{
-		"CB_UNKNOWN":               0,
-		"ITEMS":                    1,
-		"CUSTOMER":                 2,
-		"PAYMENTS":                 3,
-		"RECEIPT_ITEMS_ADD":        4,
-		"RECEIPT_ITEMS_REMOVE":     5,
-		"RECEIPT_ITEMS_EDIT":       6,
-		"BACK":                     7,
-		"CANCEL":                   8,
-		"ADD_PAYMENT_LINK":         9,
-		"ADD_PAYMENT_TRANSFER":     10,
-		"ADD_PAYMENT_CASH":         11,
-		"PAYMENT_AMOUNT_FULL":      12,
-		"PAYMENT_AMOUNT_PARTIAL":   13,
-		"PAYMENT_REFUND_FULL":      14,
-		"PAYMENT_REFUND_PARTIAL":   15,
-		"PAYMENTS_REFUND":          16,
-		"PAYMENTS_REMOVE":          17,
-		"ORDER_ACTIONS":            18,
-		"ORDER_STATE_DONE":         19,
-		"ORDER_DELETE":             20,
-		"ORDER_RESTART":            21,
-		"ORDER_RESTORE":            22,
-		"ORDER_COLLAPSE":           23,
-		"ORDER_EXPAND":             24,
-		"ORDER_STATE_IN_PROGRESS":  25,
-		"NOTIFY_READ":              26,
-		"CUSTOMER_EDIT_EMAIL":      27,
-		"CUSTOMER_EDIT_PHONE":      28,
-		"CUSTOMER_EDIT_INSTAGRAM":  29,
-		"RECEIPT_ITEM_EDIT":        30,
-		"RECEIPT_ITEM_EDIT_QTY":    31,
-		"RECEIPT_ITEM_EDIT_PRICE":  32,
-		"RECEIPT_ITEM_EDIT_NAME":   33,
-		"RECEIPT_ITEM_REMOVE":      34,
-		"PAYMENT_REFUND":           35,
-		"PAYMENT_REMOVE":           36,
-		"ORDER_EDIT":               37,
-		"ORDER_EDIT_DUE_DATE":      38,
-		"ORDER_EDIT_DESCRIPTION":   39,
-		"CUSTOM_ITEM_DELIVERY":     500,
-		"CUSTOM_ITEM_LINGERIE_SET": 501,
+		"CB_UNKNOWN":                0,
+		"ITEMS":                     1,
+		"CUSTOMER":                  2,
+		"PAYMENTS":                  3,
+		"RECEIPT_ITEMS_ADD":         4,
+		"RECEIPT_ITEMS_REMOVE":      5,
+		"RECEIPT_ITEMS_EDIT":        6,
+		"BACK":                      7,
+		"CANCEL":                    8,
+		"ADD_PAYMENT_LINK":          9,
+		"ADD_PAYMENT_TRANSFER":      10,
+		"ADD_PAYMENT_CASH":          11,
+		"PAYMENT_AMOUNT_FULL":       12,
+		"PAYMENT_AMOUNT_PARTIAL":    13,
+		"PAYMENT_REFUND_FULL":       14,
+		"PAYMENT_REFUND_PARTIAL":    15,
+		"PAYMENTS_REFUND":           16,
+		"PAYMENTS_REMOVE":           17,
+		"ORDER_ACTIONS":             18,
+		"ORDER_STATE_DONE":          19,
+		"ORDER_DELETE":              20,
+		"ORDER_RESTART":             21,
+		"ORDER_RESTORE":             22,
+		"ORDER_COLLAPSE":            23,
+		"ORDER_EXPAND":              24,
+		"ORDER_STATE_IN_PROGRESS":   25,
+		"NOTIFY_READ":               26,
+		"CUSTOMER_EDIT_EMAIL":       27,
+		"CUSTOMER_EDIT_PHONE":       28,
+		"CUSTOMER_EDIT_INSTAGRAM":   29,
+		"RECEIPT_ITEM_EDIT":         30,
+		"RECEIPT_ITEM_EDIT_QTY":     31,
+		"RECEIPT_ITEM_EDIT_PRICE":   32,
+		"RECEIPT_ITEM_EDIT_NAME":    33,
+		"RECEIPT_ITEM_REMOVE":       34,
+		"PAYMENT_REFUND":            35,
+		"PAYMENT_REMOVE":            36,
+		"ORDER_EDIT":                37,
+		"ORDER_EDIT_DUE_DATE":       38,
+		"ORDER_EDIT_DESCRIPTION":    39,
+		"CUSTOMER_EDIT_DESCRIPTION": 40,
+		"CUSTOM_ITEM_DELIVERY":      500,
+		"CUSTOM_ITEM_LINGERIE_SET":  501,
 	}
 )
 
@@ -493,7 +496,7 @@ var file_telegram_telegram_proto_rawDesc = []byte{
 	0x05, 0x53, 0x54, 0x41, 0x52, 0x54, 0x10, 0x01, 0x12, 0x10, 0x0a, 0x0c, 0x43, 0x52, 0x45, 0x41,
 	0x54, 0x45, 0x5f, 0x4f, 0x52, 0x44, 0x45, 0x52, 0x10, 0x02, 0x12, 0x18, 0x0a, 0x14, 0x52, 0x45,
 	0x47, 0x49, 0x53, 0x54, 0x45, 0x52, 0x5f, 0x41, 0x53, 0x5f, 0x4d, 0x45, 0x52, 0x43, 0x48, 0x41,
-	0x4e, 0x54, 0x10, 0x03, 0x2a, 0xad, 0x07, 0x0a, 0x0c, 0x43, 0x61, 0x6c, 0x6c, 0x62, 0x61, 0x63,
+	0x4e, 0x54, 0x10, 0x03, 0x2a, 0xcc, 0x07, 0x0a, 0x0c, 0x43, 0x61, 0x6c, 0x6c, 0x62, 0x61, 0x63,
 	0x6b, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0e, 0x0a, 0x0a, 0x43, 0x42, 0x5f, 0x55, 0x4e, 0x4b, 0x4e,
 	0x4f, 0x57, 0x4e, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x49, 0x54, 0x45, 0x4d, 0x53, 0x10, 0x01,
 	0x12, 0x0c, 0x0a, 0x08, 0x43, 0x55, 0x53, 0x54, 0x4f, 0x4d, 0x45, 0x52, 0x10, 0x02, 0x12, 0x0c,
@@ -548,14 +551,16 @@ var file_telegram_telegram_proto_rawDesc = []byte{
 	0x44, 0x49, 0x54, 0x10, 0x25, 0x12, 0x17, 0x0a, 0x13, 0x4f, 0x52, 0x44, 0x45, 0x52, 0x5f, 0x45,
 	0x44, 0x49, 0x54, 0x5f, 0x44, 0x55, 0x45, 0x5f, 0x44, 0x41, 0x54, 0x45, 0x10, 0x26, 0x12, 0x1a,
 	0x0a, 0x16, 0x4f, 0x52, 0x44, 0x45, 0x52, 0x5f, 0x45, 0x44, 0x49, 0x54, 0x5f, 0x44, 0x45, 0x53,
-	0x43, 0x52, 0x49, 0x50, 0x54, 0x49, 0x4f, 0x4e, 0x10, 0x27, 0x12, 0x19, 0x0a, 0x14, 0x43, 0x55,
-	0x53, 0x54, 0x4f, 0x4d, 0x5f, 0x49, 0x54, 0x45, 0x4d, 0x5f, 0x44, 0x45, 0x4c, 0x49, 0x56, 0x45,
-	0x52, 0x59, 0x10, 0xf4, 0x03, 0x12, 0x1d, 0x0a, 0x18, 0x43, 0x55, 0x53, 0x54, 0x4f, 0x4d, 0x5f,
-	0x49, 0x54, 0x45, 0x4d, 0x5f, 0x4c, 0x49, 0x4e, 0x47, 0x45, 0x52, 0x49, 0x45, 0x5f, 0x53, 0x45,
-	0x54, 0x10, 0xf5, 0x03, 0x42, 0x31, 0x5a, 0x2f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2f, 0x66, 0x69, 0x72, 0x65, 0x66, 0x6c, 0x79, 0x2d, 0x63, 0x72, 0x6d, 0x2f, 0x63,
-	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x74,
-	0x65, 0x6c, 0x65, 0x67, 0x72, 0x61, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x43, 0x52, 0x49, 0x50, 0x54, 0x49, 0x4f, 0x4e, 0x10, 0x27, 0x12, 0x1d, 0x0a, 0x19, 0x43, 0x55,
+	0x53, 0x54, 0x4f, 0x4d, 0x45, 0x52, 0x5f, 0x45, 0x44, 0x49, 0x54, 0x5f, 0x44, 0x45, 0x53, 0x43,
+	0x52, 0x49, 0x50, 0x54, 0x49, 0x4f, 0x4e, 0x10, 0x28, 0x12, 0x19, 0x0a, 0x14, 0x43, 0x55, 0x53,
+	0x54, 0x4f, 0x4d, 0x5f, 0x49, 0x54, 0x45, 0x4d, 0x5f, 0x44, 0x45, 0x4c, 0x49, 0x56, 0x45, 0x52,
+	0x59, 0x10, 0xf4, 0x03, 0x12, 0x1d, 0x0a, 0x18, 0x43, 0x55, 0x53, 0x54, 0x4f, 0x4d, 0x5f, 0x49,
+	0x54, 0x45, 0x4d, 0x5f, 0x4c, 0x49, 0x4e, 0x47, 0x45, 0x52, 0x49, 0x45, 0x5f, 0x53, 0x45, 0x54,
+	0x10, 0xf5, 0x03, 0x42, 0x31, 0x5a, 0x2f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x66, 0x69, 0x72, 0x65, 0x66, 0x6c, 0x79, 0x2d, 0x63, 0x72, 0x6d, 0x2f, 0x63, 0x6f,
+	0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x74, 0x65,
+	0x6c, 0x65, 0x67, 0x72, 0x61, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
